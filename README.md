@@ -24,6 +24,6 @@
 실행화면은 스테이지 화면과 각각의 미니게임으로 나뉜다.
 ```
 ##### 스테이지 화면 예시 이미지
-![image](https://user-images.githubusercontent.com/81298756/170484042-ef028aae-df42-43b6-a212-5462ee9cc121.png)
-
+![image](https://user-images.githubusercontent.com/81298756/170484042-ef028aae-df42-43b6-a212-5462ee9cc121.png)  
+##### 미니게임 
 > 미니게임 같은경우 각자가 만들기때문에 디자인이 모두 상이할 예정입니다.
