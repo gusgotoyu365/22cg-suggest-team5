@@ -1,0 +1,8 @@
+참고자료
+
+미로 자동으로 만들기
+유튜브
+https://www.youtube.com/watch?v=_p5IH0L63wo
+p5.js 에디터
+https://editor.p5js.org/codingtrain/sketches/EBkm4txSA
+
