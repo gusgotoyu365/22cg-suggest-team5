@@ -1,0 +1,184 @@
+var screen = 0;
+var x;
+var y;
+var speed;
+var score = 0;
+var rectSpeed;
+var rectWidth = 100;
+var rectY = 500;
+var rectX = -250;
+var ellY = 20;
+var ellX = 300;
+var ellWidth = 20;
+
+var rectWidth1 = 100;
+var rectY1 = 450;
+
+var rectWidth2 = 100;
+var rectY2 = 400;
+
+var rectWidth3 = 100;
+var rectY3 = 350;
+
+var rectWidth4 = 100;
+var rectY4 = 300;
+
+var rectWidth5 = 100;
+var rectY5 = 200;
+
+var rectWidth6 = 100;
+var rectY6 = 100;
+
+var randomXSpace= 50;
+var angle = 0;
+
+function setup() {
+  createCanvas(600, 600);
+  y = height - 20;
+  x = width / 2;
+  angleMode(DEGREES);
+}
+
+
+function draw() {
+  // Display the contents of the current screen
+  if (screen == 0) {
+    startScreen();
+  } else if (screen == 1) {
+    gameOn();
+    // if the screen variable was changed to 2, show the game over screen    
+  } else if (screen == 2) {
+    gameOver();
+  }
+  else if (screen == 3) {
+    gameClear();
+}
+}
+function mousePressed() {
+  if (screen == 0) {
+    screen = 1
+  } else if (screen == 2) {
+    screen = 0
+  }
+   else if (screen == 3) {
+    screen = 0
+  }
+}
+
+function startScreen() {
+  reset();
+  background(96, 157, 255)
+  fill(255)
+  textAlign(CENTER);
+  text('WELCOME TO MY AVOIDING GAME', width / 2, height / 2)
+  text('click to start', width / 2, height / 2 + 20);
+}
+
+function gameOn() {
+  background(0)
+  ellipse(x, y, 20, 20)
+  //move the ellipse 
+  if (keyIsPressed) {
+    if (keyCode === RIGHT_ARROW) {
+      x += speed
+    } else if (keyCode === LEFT_ARROW) {
+      x -= speed
+    } else if (keyCode === UP_ARROW) {
+      y -= speed
+    } else if (keyCode === DOWN_ARROW) {
+      y += speed
+    }
+  }
+  
+  rect(rectX+randomXSpace, rectY, rectWidth, 20);
+  rect(rectX+ randomXSpace+50, rectY1, rectWidth1, 20);
+  rect(rectX+ randomXSpace, rectY2, rectWidth2, 20);
+  rect(rectX+ randomXSpace+50, rectY3, rectWidth3, 20);
+  rect(rectX+ randomXSpace, rectY4, rectWidth4, 20);
+  rect(rectX+ randomXSpace+50, rectY5, rectWidth5, 60);
+  rect(rectX+ randomXSpace, rectY6, rectWidth6, 60);
+  ellipse(ellX, ellY, ellWidth, 20);
+  
+
+  
+  rectX += rectSpeed;
+
+  if (rectX > width) {
+    randomWidth();
+    rectX = -250;
+  }
+  //if you got to the other side, speed up and go back to the beginning 
+  if (y < 0) {
+    y = height - 20;
+    rectSpeed += 1;
+    score+=1
+  }
+  
+  if (y > rectY && y < rectY + 20 && x > rectX && x < rectX + rectWidth) {
+    screen = 2
+  }
+  if (y > rectY1 && y < rectY1 + 20 && x > rectX && x < rectX + rectWidth1) {
+    screen = 2
+  }
+  if (y > rectY2 && y < rectY2 + 20 && x > rectX && x < rectX + rectWidth2) {
+    screen = 2
+  }
+  if (y > rectY3 && y < rectY3 + 20 && x > rectX && x < rectX + rectWidth3) {
+    screen = 2
+  }
+  if (y > rectY4 && y < rectY4 + 20 && x > rectX && x < rectX + rectWidth4) {
+    screen = 2
+  }
+  if (y > rectY5 && y < rectY5 + 60 && x > rectX && x < rectX + rectWidth5) {
+    screen = 2
+  }
+  if (y > rectY6 && y < rectY6 + 60 && x > rectX && x < rectX + rectWidth6) {
+    screen = 2
+  }
+  if (y > ellY && y < ellY + 20 && x > ellX && x < ellX + ellWidth ) {
+    screen = 3
+  }
+}
+
+function gameOver() {
+  background(150)
+  textAlign(CENTER);
+  text('GAME OVER', width / 2, height / 2)
+  text('click to play again', width / 2, height / 2 + 20);
+
+}
+function gameClear() {
+  background(255,255,0);
+  textAlign(CENTER);
+  text('GAME CLEAR', width / 2, height / 2)
+  text('click to play again', width / 2, height / 2 + 20);
+}
+
+function randomWidth() {
+  rectWidth = random(150, 300)
+  rectWidth1 = random(150, 300)
+  rectWidth2 = random(150, 300)
+  rectWidth3 = random(150, 300)
+  rectWidth4 = random(150, 300)
+  rectWidth5 = random(150, 300)
+  rectWidth6 = random(150, 300)
+}
+
+function randomSpace() {
+  randomXSpace = random(50, 100)
+}
+
+function reset() {
+  speed = 1;
+  score = 0;
+  rectSpeed = 5;
+  rectY = 500;
+  rectX = -100;
+  rectY1 = 450;
+  rectY2 = 400;
+  rectY3 = 350;
+  rectY4 = 300;
+  rectY5 = 200;
+  y = height - 20;
+  x = width / 2;
+}
