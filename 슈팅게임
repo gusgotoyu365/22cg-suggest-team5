@@ -1,5 +1,6 @@
 참고자료: https://www.youtube.com/watch?v=GusFmfBmJmc
-p5js 주소: https://editor.p5js.org/y43937672/sketches/3BBniQ4Bw 
+p5js 주소
+https://editor.p5js.org/y43937672/sketches/3BBniQ4Bw 
 +score추가 
 
 let bullets = [];
