@@ -58,7 +58,7 @@ let ones = true;
 //슈팅 게임
 let bullets = [];
 let enemies = [];
-let score = 50; //테스트용이라 50임, 바꿀것!!! ***********************************************
+let score = 0; 
 let sP;
 let highscore = 0;
 

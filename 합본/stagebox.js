@@ -37,33 +37,33 @@ class clearBox {
           text("다음 스테이지", (this.x*2 + this.scl)/2, this.y + this.scl + 40);
         }
       pop();
-    } else {
-      this.mH = false;
-    }
-    if (mouseIsPressed) {
-      if (this.type == 1) {
-        textIndex = 0;
-        textShow = 0;
-       reset();
-        gamestop = false;
-        game = false;
-        clearS = false;
-      } else if (this.type == 2) {
-        textIndex = 0;
-        textShow = 0;
-        reset();
-        gamestop = false;
-        clearS = false;
-      } else if (this.type == 3) {
-        if (nowStage != 5) {
+      if (mouseIsPressed) {
+        if (this.type == 1) {
           textIndex = 0;
           textShow = 0;
           reset();
-          nowStage ++;
+          gamestop = false;
+          game = false;
+          clearS = false;
+        } else if (this.type == 2) {
+          textIndex = 0;
+          textShow = 0;
+          reset();
           gamestop = false;
           clearS = false;
+        } else if (this.type == 3) {
+          if (nowStage != 5) {
+            textIndex = 0;
+            textShow = 0;
+            reset();
+            nowStage ++;
+            gamestop = false;
+            clearS = false;
+          }
         }
       }
+    } else {
+      this.mH = false;
     }
   }
   

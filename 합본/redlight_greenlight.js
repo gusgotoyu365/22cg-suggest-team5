@@ -5,7 +5,7 @@ function man001s(){
     }
   }
   if (keyIsPressed == true  && textShow == 3) {
-    bP2.x -= 100;
+    bP2.x -= 1;
   }
   if (keyIsPressed === true && out == 1) {
     reset();
