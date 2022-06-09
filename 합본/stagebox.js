@@ -1,5 +1,4 @@
 function drawStageBox() {
-  push();
   fill(230);
   stroke(0);
   strokeWeight(3);
@@ -12,7 +11,6 @@ function drawStageBox() {
     cB[i].mouseHover();
     cB[i].display();
   }
-  pop();
 }
 
 class clearBox {
@@ -27,6 +25,7 @@ class clearBox {
   mouseHover() {
     if (mouseX > this.x && mouseX < this.x + this.scl &&
         mouseY > this.y && mouseY < this.y + this.scl) {
+      this.mH = true;
       push();
       strokeWeight(1);
       textSize(20);
@@ -34,32 +33,42 @@ class clearBox {
           text("스테이지", (this.x*2 + this.scl)/2, this.y + this.scl + 40);
         } else if (this.type == 2) {
           text("다시하기", (this.x*2 + this.scl)/2, this.y + this.scl + 40);
-        } else if (this.type == 3) {
+        } else if (this.type == 3 && nowStage != 5) {
           text("다음 스테이지", (this.x*2 + this.scl)/2, this.y + this.scl + 40);
-      }
-      pop();
-      if (mouseIsPressed) {
-        if (this.type == 1) {
-          reset();
-          gamestop = false;
-          game = false;
-        } else if (this.type == 2) {
-          reset();
-          gamestop = false;
-        } else if (this.type == 3) {
-          if (nowStage != 6) {
-            nowStage ++;
-            gamestop = false;
-          }
         }
-      }
-      this.mH = true;
+      pop();
     } else {
       this.mH = false;
+    }
+    if (mouseIsPressed) {
+      if (this.type == 1) {
+        textIndex = 0;
+        textShow = 0;
+       reset();
+        gamestop = false;
+        game = false;
+        clearS = false;
+      } else if (this.type == 2) {
+        textIndex = 0;
+        textShow = 0;
+        reset();
+        gamestop = false;
+        clearS = false;
+      } else if (this.type == 3) {
+        if (nowStage != 5) {
+          textIndex = 0;
+          textShow = 0;
+          reset();
+          nowStage ++;
+          gamestop = false;
+          clearS = false;
+        }
+      }
     }
   }
   
   display() {
+    push();
     if (this.mH == true) {
       stroke(127);
       tint(255,127);
@@ -67,10 +76,9 @@ class clearBox {
       stroke(0);
       noTint();
     }
-    push();
     fill(255);
     square(this.x-10, this.y-10, 100, 20);
-    pop();
+
     if (this.type == 1) { //스테이지 버튼
       image(i_stage, this.x, this.y-2, this.scl, this.scl);
     } else if (this.type == 2) { //다시하기 버튼
@@ -78,5 +86,6 @@ class clearBox {
     } else if (this.type == 3) { //다음 스테이지 버튼
       image(i_neB, this.x, this.y, this.scl, this.scl);
     }
+    pop();
   }
 }

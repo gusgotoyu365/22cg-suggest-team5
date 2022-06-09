@@ -25,6 +25,9 @@ function shooting_game() {
   }
   for (let enemy of enemies) {
     for (let bullet of bullets) {
+      if (bullet.y < -850) {
+        bullets.splice(bullets.indexOf(bullet), 1);
+      }
       if (dist(enemy.x, enemy.y, bullet.x, bullet.y) < 10) {
         enemies.splice(enemies.indexOf(enemy), 1);
         bullets.splice(bullets.indexOf(bullet), 1);
@@ -48,7 +51,6 @@ function shooting_game() {
       }
     }
   }
-  console.log(mouseX + " " + mouseY);
   fill(230);
   stroke(0);
   rect(93, 25, 175, 40);
@@ -59,6 +61,7 @@ function shooting_game() {
   if (score >= highscore) {
     push();
     textAlign(RIGHT);
+    fill('rgb(6,177,27)');
     text("최고기록!", width, 35);
     pop();
     highscore = score;
@@ -71,7 +74,7 @@ class shootP {
   }
   
   move() {
-    this.x += (keyIsDown(68) - keyIsDown(65))*4;
+    this.x += ((keyIsDown(68)|keyIsDown(39)) - (keyIsDown(65)|keyIsDown(37)))*4;
     this.x = constrain(this.x, 0, width - 24);
   }
   

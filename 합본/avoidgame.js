@@ -9,6 +9,16 @@ function gameOn() {
   rect(220,0,360,20);
   pop();
   aP.move();
+  if (aP.y > 750) {
+    push();
+    fill(255);
+    noStroke();
+    textStyle(BOLD);
+    textSize(20);
+    textAlign(CENTER);
+    text("어지러워요!", aP.x+30, aP.y-25);
+    pop();
+  }
   for(let i = 0; i < 14; i++) {
     aR[i].display();
     aR[i].move();
@@ -59,7 +69,6 @@ class avoidRect {
         this.x < aP.x + aP.scl &&
         this.y + this.h > aP.y &&
         this.y < aP.y + aP.scl) {
-      console.log("Gameover");
       reset();
     }
   }
