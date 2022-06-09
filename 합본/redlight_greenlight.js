@@ -51,6 +51,7 @@ function womoo() { //영희가 뒤돌아보는거
 function time0() { //타이머 표시 및 시간 관련
   push();
   stroke(0);
+  strokeWeight(1);
   fill(200);
   rect(height/2-50,20,110,50);
   rect(height/2,0,8,20);

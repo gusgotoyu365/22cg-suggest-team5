@@ -1,12 +1,13 @@
 function drawStageBox() {
+  push();
   fill(230);
   stroke(0);
-  strokeWeight(3);
   rect(150,250,500,300);
   textAlign(CENTER);
   textSize(40);
   fill(0);
   text((nowStage+1) + "스테이지 완료!", width/2, height/2-70);
+  pop();
   for (let i = 0; i < 3; i++) {
     cB[i].mouseHover();
     cB[i].display();
