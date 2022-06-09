@@ -6,7 +6,7 @@ let x = -160;
 let n = 0;
 let p = [];
 let arrowArr = [];
-let state = 2;
+let state = 0;
 let i = 0;
 let dragging = false;
 let nowStage = 0;
@@ -178,11 +178,11 @@ function setup() {
    bP4.eye = 15;
   
   //**************************************테스트용****************************************
-  stageclear(1);
+  /*stageclear(1);
   stageclear(2);
   stageclear(3);
   stageclear(4);
-  stageclear(5);
+  stageclear(5);*/
 }
 
 function draw() {
