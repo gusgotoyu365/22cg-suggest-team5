@@ -76,6 +76,7 @@ function time0() { //타이머 표시 및 시간 관련
       stageclear(nowStage+1);
     }
   } else {
+    push();
     fill(255,0,0);
     textSize(30);
     textAlign(LEFT);
@@ -84,5 +85,6 @@ function time0() { //타이머 표시 및 시간 관련
     } else {
       text("00:0" + time, height/2-32,56);
     }
+    pop();
   }
 }

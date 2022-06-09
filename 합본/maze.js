@@ -76,7 +76,9 @@ function Cell(i,j) {
  this.show = function(){
    let x = this.i*m_s;
    let y = this.j*m_s;
-   stroke(255);
+   push();
+   strokeWeight(4);
+   stroke(230);
    if(this.walls[0]){
      line(x, y, x+m_s, y);
    }
@@ -89,6 +91,7 @@ function Cell(i,j) {
    if(this.walls[3]){
      line(x, y+m_s, x, y);
    }
+   pop();
    if(this.visited){
      noStroke();
      fill('rgb(0,255,173)');
