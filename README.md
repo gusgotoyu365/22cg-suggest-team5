@@ -1,7 +1,10 @@
-> 코드 링크: https://editor.p5js.org/gusgotoyu365/sketches/1S8Xcig3L  
-> 파워포인트 링크: https://docs.google.com/presentation/d/1_4yYNPeQlZs1k3MCCttVd-FrjoVW8xWfPktQvhynGyc/edit?usp=sharing  
-> 유튜브 동영상 링크: https://youtu.be/FgmeRwpeZT8  
-
+###### 코드 링크
+> https://editor.p5js.org/gusgotoyu365/sketches/1S8Xcig3L  
+###### 파워포인트 링크
+> https://docs.google.com/presentation/d/1_4yYNPeQlZs1k3MCCttVd-FrjoVW8xWfPktQvhynGyc/edit?usp=sharing  
+###### 유튜브 동영상 링크
+> https://youtu.be/FgmeRwpeZT8  
+```
 # 2팀 과제 계획
 
 ## 목표
