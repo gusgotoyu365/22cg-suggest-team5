@@ -243,8 +243,12 @@ function hellobox() {
       } else {
         textShow++;
       }
+      eyemove = false;
+      bP.Leye = bP.x+40;
+      bP.Reye = bP.x+40;
       text("분명 여기쯤이었는데...", bP.x+30, bP.y-25);
     } else if (textShow == 22) {
+      eyemove = true;
       bP.x = 100;
       text("아! 맞아요!", bP.x+30, bP.y-25);
     } else if (textShow == 23) {
@@ -369,7 +373,7 @@ class boxPlayer {
   }
   
   display() {
-    if (nowStage != 1) {
+    if (nowStage != 1 && eyemove == true) {
       if (((keyIsDown(68)|keyIsDown(39)) - (keyIsDown(65)|keyIsDown(37))) == 0) {
         this.Leye = this.x+14;
         this.Reye = this.x+36;

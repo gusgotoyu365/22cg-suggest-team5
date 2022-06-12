@@ -28,6 +28,7 @@ let textShow = 0;
 let ellipseX = 800/2, ellipseY = 800/2;
 let scene = 0;
 let ellcoll = false;
+let eyemove = true;
 
 //무궁화 게임
 let played_moo1 = false;

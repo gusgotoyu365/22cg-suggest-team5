@@ -103,10 +103,14 @@ function byebox() {
       }
     } else if (textShow == 12) {
       text("와, 제 집이에요!!", bP4.x+30, bP4.y-25);
+      eyemove = false;
+      bP.Leye = bP.x+40;
+      bP.Reye = bP.x+40;
       if (bP4.x + 50 < width/2+50) {
          bP4.x += 2;
       }
     } else if (textShow == 13) {
+      eyemove = true;
       if (bP4.x + 50 < width/2+150) {
          bP4.x += 2;
       } else {
