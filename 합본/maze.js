@@ -175,9 +175,11 @@ function keyReleased() {
 }
 
 function goal(){
+ push();
  noStroke();
  fill(255,0,0)
  rect((cols-1)*m_s+2,(rows-1)*m_s+2,m_s-4,m_s-4);
+ pop();
  if(player.i == cols-1 && player.j == rows-1){
    gamestop = true;
    if (stage[nowStage + 1].a == 0) {
