@@ -1,5 +1,5 @@
 function reset() {
-  if (game == true) {
+  if (game == true && textShow > 0) {
     s_reset.play();
   }
   if (nowStage == 0) {
