@@ -21,7 +21,7 @@ class Arrow {
   }
   display() {
     this.sA = dist(this.x,this.y,mouseX,mouseY)/50+2;
-    this.angleA = atan2(mouseY - this.x, mouseX - this.y);
+    this.angleA = atan2(mouseY - this.y, mouseX - this.x);
     push();
     translate(this.x,this.y);
     angleMode(DEGREES);
