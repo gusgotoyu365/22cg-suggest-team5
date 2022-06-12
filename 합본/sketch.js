@@ -64,6 +64,8 @@ let highscore = 0;
 
 function preload(){
   soundFormats('mp3');
+  //리셋
+  s_reset = loadSound('audios/reset.mp3');
   //노트북 사진, 1이 다 열린상태
   lt1= loadImage('images/laptop1.jpg');
   lt2= loadImage('images/laptop2.jpg');
@@ -91,6 +93,8 @@ function preload(){
   s_punch = loadSound('audios/punch.mp3');
   i_lightoff = loadSound('audios/lightoff.mp3');
   i_hit = loadImage('images/hit.png');
+  //슈팅 게임
+  s_shoot = loadSound('audios/shoot.mp3');
   //마지막
   i_house = loadImage('images/house.png');
   i_end1 = loadImage('images/end1.png');
@@ -178,11 +182,11 @@ function setup() {
    bP4.eye = 15;
   
   //**************************************테스트용****************************************
-  /*stageclear(1);
+  stageclear(1);
   stageclear(2);
   stageclear(3);
   stageclear(4);
-  stageclear(5);*/
+  stageclear(5);
 }
 
 function draw() {
@@ -357,12 +361,13 @@ function keyPressed() {
     textShow++;
   }
   //슈팅게임
-  if (keyCode == 32 && nowStage == 4) {
+  if (keyCode == 32 && nowStage == 4 && textShow == 4) {
     let bullet = {
-    x: sP.x,
-    y: height - 50,
-  };
+      x: sP.x,
+      y: height - 50,
+    };
     bullets.push(bullet);
+    s_shoot.play();
   }
   }
 }

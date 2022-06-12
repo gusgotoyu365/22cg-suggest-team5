@@ -1,4 +1,7 @@
 function reset() {
+  if (game == true) {
+    s_reset.play();
+  }
   if (nowStage == 0) {
     /*textIndex = 0;
     textShow = 0;*/

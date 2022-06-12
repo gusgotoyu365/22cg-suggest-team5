@@ -24,6 +24,7 @@ function display_state() {
       let bx = 303;
       let by = 338;
       translate(bx, by+20);
+      angleMode(DEGREES);
       rotate(354);
       if (mouseX > 300 && mouseX < 357 && mouseY > 353 && mouseY < 407) {
         fill(100);
@@ -383,8 +384,6 @@ function display_state() {
   } else if (nowStage == 5 && game == true) {
     if (gamestop == false) {
       byebox();
-    } else {
-      
     }
   }
 }

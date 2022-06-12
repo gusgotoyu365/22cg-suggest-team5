@@ -1,7 +1,7 @@
 function drawStageBox() {
   push();
   fill(230);
-  strokeWeight(3);
+  textStyle(BOLD);
   rect(150,250,500,300);
   textAlign(CENTER);
   textSize(40);
@@ -30,6 +30,7 @@ class clearBox {
       this.mH = true;
       push();
       noStroke();
+      textStyle(BOLD);
       textSize(20);
       fill(0);
       if (this.type == 1) {
