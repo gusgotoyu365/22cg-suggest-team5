@@ -1,11 +1,12 @@
 function drawStageBox() {
   push();
   fill(230);
-  stroke(0);
+  strokeWeight(3);
   rect(150,250,500,300);
   textAlign(CENTER);
   textSize(40);
   fill(0);
+  noStroke();
   text((nowStage+1) + "스테이지 완료!", width/2, height/2-70);
   pop();
   for (let i = 0; i < 3; i++) {
@@ -28,8 +29,9 @@ class clearBox {
         mouseY > this.y && mouseY < this.y + this.scl) {
       this.mH = true;
       push();
-      strokeWeight(1);
+      noStroke();
       textSize(20);
+      
       if (this.type == 1) {
           text("스테이지", (this.x*2 + this.scl)/2, this.y + this.scl + 40);
         } else if (this.type == 2) {
@@ -78,6 +80,7 @@ class clearBox {
       noTint();
     }
     fill(255);
+    strokeWeight(3);
     square(this.x-10, this.y-10, 100, 20);
 
     if (this.type == 1) { //스테이지 버튼
