@@ -31,7 +31,7 @@ class clearBox {
       push();
       noStroke();
       textSize(20);
-      
+      fill(0);
       if (this.type == 1) {
           text("스테이지", (this.x*2 + this.scl)/2, this.y + this.scl + 40);
         } else if (this.type == 2) {
