@@ -13,7 +13,6 @@ class Arrow {
     push();
     fill(this.cR,this.cG,this.cB);
     translate(this.x,this.y);
-    angleMode(DEGREES);
     rotate(this.angleA);
     beginShape();
     vertex(-2*this.sA,-this.sA);
