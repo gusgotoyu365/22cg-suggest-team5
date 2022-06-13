@@ -3,7 +3,7 @@
 ###### 파워포인트 링크
 > https://docs.google.com/presentation/d/1_4yYNPeQlZs1k3MCCttVd-FrjoVW8xWfPktQvhynGyc/edit?usp=sharing  
 ###### 유튜브 동영상 링크
-> https://youtu.be/FgmeRwpeZT8  
+> https://youtu.be/Feq1goSgBQ0  
 ------------
 # 2팀 과제 계획
 
