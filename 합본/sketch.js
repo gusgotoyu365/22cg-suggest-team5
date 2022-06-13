@@ -11,6 +11,8 @@ let i = 0;
 let dragging = false;
 let nowStage = 0;
 
+let menu_sound = false; //메뉴 소리
+
 //스테이지 화면
 let overBox = []; //버튼위에 마우스가 있는지 나타내는 변수
 let game = false; //게임 실행중을 나타내는 변수
@@ -67,6 +69,10 @@ function preload(){
   soundFormats('mp3');
   //리셋
   s_reset = loadSound('audios/reset.mp3');
+  //메뉴선택
+  s_menusel = loadSound('audios/menu_sel.mp3');
+  s_start = loadSound('audios/start.mp3');
+  s_startfast = loadSound('audios/start_fast.mp3');
   //노트북 사진, 1이 다 열린상태
   lt1= loadImage('images/laptop1.jpg');
   lt2= loadImage('images/laptop2.jpg');
@@ -183,11 +189,11 @@ function setup() {
    bP4.eye = 15;
   
   //**************************************테스트용****************************************
-  /*stageclear(1);
+  stageclear(1);
   stageclear(2);
   stageclear(3);
   stageclear(4);
-  stageclear(5);*/
+  stageclear(5);
 }
 
 function draw() {
@@ -219,6 +225,7 @@ class stage_c {
     this.x = x; //스테이지 버튼 x위치
     this.y = y; //스테이지 버튼 y위치
     this.a = a; //스테이지 활성화 (1이면 활성화)
+    this.sound = false;
   }
   
   b_draw() { //버튼 그리기
@@ -287,8 +294,10 @@ function mouseLocation(bx, by, n){
       }
       text(b_text, (bx*2+b_size)/2, by+b_size+30);
     }
-    
-    
+    if (stage[n-1].sound == false) {
+      s_menusel.play();
+      stage[n-1].sound = true;
+    }
     if (n == 5) {
       stroke('rgb(6,177,27)');
       fill('rgb(6,177,27)');
@@ -297,6 +306,9 @@ function mouseLocation(bx, by, n){
     }
     pop();
   } else {
+    if (stage[n-1].sound == true) {
+      stage[n-1].sound = false;
+    }
     overBox[n] = false; //마우스가 버튼안에 없다는걸 표시
   }
 }
@@ -312,6 +324,7 @@ function mousePressed() {
       for(i=0; i<=stage.length; i++) {
         if (overBox[i]) { //마우스가 버튼 위에 있을 때
           nowStage = i-1;
+          s_startfast.play();
           gamef(); //게임 실행
         } 
       }
@@ -322,6 +335,7 @@ function mousePressed() {
 function mouseReleased() {
   if (state == 1 && lapIn > 240 && mouseX > 300 && mouseX < 357 && mouseY > 353 && mouseY < 407) {
     dragging = false;
+    s_start.play();
     removeElements();
     state = 2;
   }

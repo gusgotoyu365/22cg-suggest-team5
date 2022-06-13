@@ -29,14 +29,18 @@ function display_state() {
       if (mouseX > 300 && mouseX < 357 && mouseY > 353 && mouseY < 407) {
         fill(100);
         stroke(50);
+        if (menu_sound == false) {
+          s_menusel.play();
+          menu_sound = true;
+        }
       } else {
         fill(227);
         stroke(255);
+        menu_sound = false;
       }
       square(0,0,ps);
       triangle(ps/3,ps/3,ps/3,ps*2/3,ps*2/3,ps/2);
       pop();
-      
     }
   }
   

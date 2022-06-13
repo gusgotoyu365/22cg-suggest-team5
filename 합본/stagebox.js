@@ -22,6 +22,7 @@ class clearBox {
     this.scl = 80;
     this.type = t;
     this.mH = false;
+    this.sound = false;
   }
   
   mouseHover() {
@@ -42,6 +43,7 @@ class clearBox {
         }
       pop();
       if (mouseIsPressed) {
+        s_startfast.play();
         if (this.type == 1) {
           textIndex = 0;
           textShow = 0;
@@ -66,8 +68,13 @@ class clearBox {
           }
         }
       }
+      if (this.sound == false) {
+        s_menusel.play();
+        this.sound = true;
+      }
     } else {
       this.mH = false;
+      this.sound = false;
     }
   }
   

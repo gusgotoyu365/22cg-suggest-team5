@@ -384,7 +384,7 @@ class boxPlayer {
         this.Leye = this.x+10;
         this.Reye = this.x+10;
       }
-    } else {
+    } else if (eyemove == true) {
       if (keyIsPressed && textShow == 3) {
         this.Leye = this.x+10;
         this.Reye = this.x+10;

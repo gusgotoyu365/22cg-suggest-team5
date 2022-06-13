@@ -38,11 +38,15 @@ function byebox() {
       textShow ++;
       s_pop.play();
     } else if (textShow == 1) {
+      eyemove = false;
+      bP.Leye = bP.x+40;
+      bP.Reye = bP.x+40;
       text("여기가 제 집이에요!", bP4.x+30, bP4.y-25);
       if (bP4.x < 200) {
         bP4.x += 2;
       }
     } else if (textShow == 2) {
+      eyemove = true;
       bP4.x = 200;
       text("...그런데 뭐죠?", bP4.x+30, bP4.y-25);
     } else if (textShow == 3) {
