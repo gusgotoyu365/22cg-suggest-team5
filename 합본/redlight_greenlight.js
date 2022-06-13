@@ -77,6 +77,7 @@ function time0() { //타이머 표시 및 시간 관련
     }
   } else {
     push();
+    noStroke();
     fill(255,0,0);
     textSize(30);
     textAlign(LEFT);

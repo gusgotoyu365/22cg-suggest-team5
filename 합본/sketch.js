@@ -189,11 +189,11 @@ function setup() {
    bP4.eye = 15;
   
   //**************************************테스트용****************************************
-  stageclear(1);
+  /*stageclear(1);
   stageclear(2);
   stageclear(3);
   stageclear(4);
-  stageclear(5);
+  stageclear(5);*/
 }
 
 function draw() {
