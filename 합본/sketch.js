@@ -100,6 +100,8 @@ function preload(){
   s_punch = loadSound('audios/punch.mp3');
   i_lightoff = loadSound('audios/lightoff.mp3');
   i_hit = loadImage('images/hit.png');
+  //미로 게임
+  s_mazemove = loadSound('audios/maze_move.mp3');
   //슈팅 게임
   s_shoot = loadSound('audios/shoot.mp3');
   //마지막

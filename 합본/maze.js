@@ -154,6 +154,7 @@ function move_p(){
  if(goMove){
    goMove = false;
    player = moveTo;
+   s_mazemove.play();
  }
  let p_size = m_s-10;
  noStroke();
