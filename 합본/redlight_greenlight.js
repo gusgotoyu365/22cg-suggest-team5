@@ -81,6 +81,7 @@ function time0() { //타이머 표시 및 시간 관련
     fill(255,0,0);
     textSize(30);
     textAlign(LEFT);
+    textStyle(NORMAL);
     if (time >= 10) {
       text("00:" + time, height/2-32,56);
     } else {
