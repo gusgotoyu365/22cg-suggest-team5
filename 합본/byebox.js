@@ -39,8 +39,8 @@ function byebox() {
       s_pop.play();
     } else if (textShow == 1) {
       eyemove = false;
-      bP.Leye = bP.x+40;
-      bP.Reye = bP.x+40;
+      bP4.Leye = bP4.x+40;
+      bP4.Reye = bP4.x+40;
       text("여기가 제 집이에요!", bP4.x+30, bP4.y-25);
       if (bP4.x < 200) {
         bP4.x += 2;
@@ -108,8 +108,8 @@ function byebox() {
     } else if (textShow == 12) {
       text("와, 제 집이에요!!", bP4.x+30, bP4.y-25);
       eyemove = false;
-      bP.Leye = bP.x+40;
-      bP.Reye = bP.x+40;
+      bP4.Leye = bP4.x+40;
+      bP4.Reye = bP4.x+40;
       if (bP4.x + 50 < width/2+50) {
          bP4.x += 2;
       }
